@@ -1,0 +1,111 @@
+body {
+    font-family: sans-serif;
+    background: #e8f5e9;
+    text-align: center;
+    padding: 20px;
+}
+
+.container {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px #aaa;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #2e7d32;
+}
+
+.survey-form {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+label {
+    text-align: left;
+    font-weight: bold;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #1b5e20;
+}
+
+input, select {
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    margin-bottom: 5px;
+}
+
+input:focus, select:focus {
+    border-color: #43a047;
+    box-shadow: 0 0 5px #43a04755;
+}
+
+.btn {
+    display: block;
+    margin: 25px auto 0 auto;
+    padding: 15px 25px;
+    background: #43a047;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #2e7d32;
+}
+.wheel-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    margin: 20px auto;
+}
+
+.pointer {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 20px solid #ff0000; /* Red pointer */
+    z-index: 5;
+}
+
+#wheelCanvas {
+    border-radius: 50%;
+    background: #fff;
+}
+
+#spinButton {
+    margin-top: 20px;
+    padding: 12px 30px;
+    font-size: 18px;
+    background: green;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+}
+.pointer {
+    position: absolute;
+    left: 10px;            /* Move to right side */
+    top: 50%;
+    transform: translateY(50%) rotate(90deg); 
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 30px solid rgb(28, 177, 23);  /* Arrow color */
+    z-index: 10;
+}

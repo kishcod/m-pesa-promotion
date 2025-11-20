@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Survey</title>
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+    /* Extra spacing fixes (safe even if external CSS fails) */
+    .survey-container {
+        display: flex;
+        flex-direction: column;
+        gap: 22px; /* ← controls the spacing between each question */
+        text-align: left;
+        width: 100%;
+    }
+
+    .survey-container label {
+        font-weight: bold;
+        color: #1b5e20;
+        font-size: 16px;
+    }
+
+    .survey-container input,
+    .survey-container select {
+        padding: 14px;
+        font-size: 17px;
+        width: 100%;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+    }
+
+    .btn {
+        margin-top: 25px;
+    }
+</style>
+
+</head>
+<body>
+
+<div class="container">
+    <h2>Survey Questions</h2>
+
+    <form action="spin.html" class="survey-container">
+
+        <div>
+            <label for="business">What type of business do you have?</label>
+            <input type="text" id="business" name="business" required>
+        </div>
+
+        <div>
+            <label for="income">Household monthly income (KES)</label>
+            <input type="number" id="income" name="income" required>
+        </div>
+
+        <div>
+            <label for="age">Age group</label>
+            <select id="age" name="age" required>
+                <option value="">-- select --</option>
+                <option>18–25</option>
+                <option>26–35</option>
+                <option>36–45</option>
+                <option>46–60</option>
+                <option>60+</option>
+            </select>
+        </div>
+
+        <div>
+            <label for="employment">Employment status</label>
+            <select id="employment" name="employment" required>
+                <option value="">-- select --</option>
+                <option>Employed</option>
+                <option>Self-Employed</option>
+                <option>Unemployed</option>
+                <option>Student</option>
+            </select>
+        </div>
+
+        <button class="btn" type="submit">Submit & spin</button>
+
+    </form>
+</div>
+
+</body>
+</html>

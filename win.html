@@ -1,0 +1,13 @@
+<!DOCTYPE html><html><head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/style.css">
+<title>You Won</title></head><body>
+<div class="container">
+<h2 id="amount"></h2>
+<a class="btn" href="share.html">Continue to Withdraw</a>
+</div>
+<script>
+const p=new URLSearchParams(window.location.search);
+document.getElementById("amount").innerText=" CONGRATULATIONS!You Won: "+p.get("amount")+" KES";
+</script>
+</body></html>
