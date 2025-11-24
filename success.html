@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Survey Success</title>
+<link rel="stylesheet" href="css/style.css">
+<style>
+    body {
+        text-align: center;
+        padding-top: 80px;
+        background: #0b1a0f;
+        color: white;
+        font-family: Arial, sans-serif;
+    }
+
+    .box {
+        background: #102416;
+        width: 90%;
+        max-width: 450px;
+        margin: auto;
+        padding: 40px 20px;
+        border-radius: 15px;
+        box-shadow: 0 0 20px rgba(0,255,0,0.15);
+    }
+
+    .tick {
+        font-size: 90px;
+        color: #1dbf32; /* Safaricom green */
+        margin-bottom: 20px;
+        filter: drop-shadow(0 0 6px rgba(0,255,0,0.4));
+    }
+
+    h2 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: #aaffaa;
+    }
+
+    p {
+        font-size: 16px;
+        opacity: 0.8;
+        margin-bottom: 30px;
+    }
+
+    #goSpin {
+        display: inline-block;
+        background: #1dbf32;
+        padding: 14px 32px;
+        border-radius: 10px;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        text-decoration: none;
+        box-shadow: 0 4px 12px rgba(0,255,0,0.25);
+        transition: 0.2s;
+    }
+
+    #goSpin:hover {
+        background: #18a52b;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 16px rgba(0,255,0,0.4);
+    }
+</style>
+</head>
+<body>
+
+<div class="box">
+    <div class="tick">✓</div>
+
+    <h2>Congratulations!</h2>
+    <p>You have passed the survey successfully.</p>
+
+    <a href="spin.html" id="goSpin">Proceed to Spin</a>
+</div>
+
+</body>
+</html>

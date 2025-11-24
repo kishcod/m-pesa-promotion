@@ -1,15 +1,20 @@
 const wheel = document.getElementById("wheelCanvas");
 const ctx = wheel.getContext("2d");
 
-const segments = [52000,13000,50000,30000,50000,25000,40000];
-const colors   = ["#43A047","#4CAF50","#2E7D32","#66BB6A","#1B5E20","#81C784","#4CAF50"];
+const segments = [520000, 13000, 50000, 30000, 5000, 25000, 40000];
+const colors = ["#43A047","#4CAF50","#2E7D32","#66BB6A","#1B5E20","#81C784","#4CAF50"];
 
-let startAngle = 0, spinTime = 0, spinTotalTime = 0;
+let startAngle = 0;
+let spinTime = 0;
+let spinTotalTime = 0;
 
-function drawWheel(){
+// 🎯 FORCE WHEEL TO STOP AT THIS VALUE
+const forcedWin = 50000;  // ← change to what you want
+
+function drawWheel() {
     const arc = Math.PI / (segments.length / 2);
 
-    for(let i = 0; i < segments.length; i++){
+    for (let i=0; i<segments.length; i++) {
         let angle = startAngle + i * arc;
 
         ctx.fillStyle = colors[i];
@@ -18,6 +23,7 @@ function drawWheel(){
         ctx.arc(175, 175, 0, angle + arc, angle, true);
         ctx.fill();
 
+        // text
         ctx.save();
         ctx.translate(
             175 + Math.cos(angle + arc / 2) * 100,
@@ -26,57 +32,57 @@ function drawWheel(){
         ctx.rotate(angle + arc / 2 + Math.PI / 2);
         ctx.fillStyle = "white";
         ctx.font = "16px Arial";
-        ctx.fillText(segments[i], -20, 0);
+        ctx.fillText(segments[i], -25, 0);
         ctx.restore();
     }
 }
 
-function rotateWheel(){
-    spinTime += 50;
+// ⭐ NEW — automatically compute exact stop angle for forced value
+function getForcedStopAngle() {
+    const index = segments.indexOf(forcedWin);
+    const slice = 360 / segments.length;
 
-    if(spinTime >= spinTotalTime){
+    // pointer is at 0° (pointing left from right side)
+    const pointerAngle = 0;
+
+    return (360 - (index * slice) + pointerAngle) * (Math.PI / 180);
+}
+
+
+function rotateWheel() {
+    spinTime += 30;
+
+    if (spinTime >= spinTotalTime) {
         stopRotate();
         return;
     }
 
-    // Slower speed (80 → 40 degrees/frame)
-    const spinAngle = easeOut(spinTime, 0, 50, spinTotalTime);
-
-    startAngle += spinAngle * Math.PI / 180;
+    const spinAngle = easeOut(spinTime, 0, 12, spinTotalTime); // slower spin
+    startAngle += (spinAngle * Math.PI / 180);
 
     drawWheel();
     requestAnimationFrame(rotateWheel);
 }
 
-function stopRotate(){
-    const degrees = (startAngle * 180 / Math.PI + 90) % 360;
-    const arcd = 360 / segments.length;
+function stopRotate() {
+    // 🎯 MAKE WHEEL SNAP EXACTLY TO WIN VALUE
+    startAngle = getForcedStopAngle();
 
-    const index = Math.floor((360 - degrees) / arcd) % segments.length;
-    const amount = segments[index];
+    drawWheel();
 
-    // SHOW THE RESULT FIRST
-    // You can customize this
-    alert("🎉 You won: KES " + amount);
-
-    // WAIT 2 SECONDS BEFORE REDIRECTING
     setTimeout(() => {
-        window.location = "win.html?amount=" + amount;
-    }, 2000); // 2000 ms = 2 seconds
+        window.location = "win.html?amount=" + forcedWin;
+    }, 1200); // smoother delay before next page
 }
 
-
-function easeOut(t, b, c, d){
-    return c * Math.sin(t / d * (Math.PI / 2)) + b;
+function easeOut(t, b, c, d) {
+    return c * Math.sin((t / d) * (Math.PI / 2)) + b;
 }
 
 document.getElementById("spinBtn").onclick = () => {
-    spinTime = 10;
-
-    // Slower spin: 20s – 25.5s
-    spinTotalTime = 8000 + Math.random() * 1800;
-
+    spinTime = 0;
+    spinTotalTime = 4500; // slower + more realistic
     rotateWheel();
-};
+}
 
 drawWheel();
