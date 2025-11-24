@@ -163,3 +163,17 @@ select {
     max-width: 40%;
     height: auto;
 }
+.green-btn {
+    background-color: #28a745; /* green color */
+    color: white;             /* text color */
+    border: none;             /* remove border */
+    padding: 10px 20px;       /* size of button */
+    border-radius: 5px;       /* rounded corners */
+    font-size: 16px;          /* text size */
+    cursor: pointer;          /* pointer on hover */
+    transition: background-color 0.3s ease; /* smooth hover */
+}
+
+.green-btn:hover {
+    background-color: #218838; /* darker green on hover */
+}
