@@ -159,3 +159,7 @@ select {
     appearance: none;
     line-height: 1.4;       /* keeps arrow + text aligned */
 }
+.logo {
+    max-width: 40%;
+    height: auto;
+}
