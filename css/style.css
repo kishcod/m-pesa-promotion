@@ -177,3 +177,8 @@ select {
 .green-btn:hover {
     background-color: #218838; /* darker green on hover */
 }
+.disabled {
+    background-color: #ccc;
+    pointer-events: none;
+    cursor: not-allowed;
+}

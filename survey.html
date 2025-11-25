@@ -41,7 +41,7 @@
 <div class="container">
     <h2>Survey Questions</h2>
 
-    <form action="spin.html" class="survey-container">
+    <form class="survey-container" onsubmit="return goSuccess()">
 
         <div>
             <label for="business">What type of business do you have?</label>
@@ -76,13 +76,17 @@
             </select>
         </div>
 
-    <button type="button" class="green-btn" onclick="goSuccess()">Submit & Continue</button> 
+    <button type="submit" class="green-btn">Submit & Continue</button>
+
 
 <script>
 function goSuccess() {
+    // Redirect to success.html after form is valid
     window.location.href = "success.html";
+    return false; // prevent default form submission
 }
 </script>
+
  
 
     </form>
