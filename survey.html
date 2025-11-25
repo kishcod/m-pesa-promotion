@@ -6,34 +6,38 @@
 <link rel="stylesheet" href="css/style.css">
 
 <style>
-    /* Extra spacing fixes (safe even if external CSS fails) */
-    .survey-container {
-        display: flex;
-        flex-direction: column;
-        gap: 22px; /* ← controls the spacing between each question */
-        text-align: left;
-        width: 100%;
-    }
+/* Extra spacing fixes (safe even if external CSS fails) */
+.survey-container {
+    display: flex;
+    flex-direction: column;
+    gap: 22px; /* ← controls the spacing between each question */
+    text-align: left;
+    width: 100%;
+    background-color: #f0f0f0; /* light grey */
+    padding: 20px;             /* space inside the form */
+    border-radius: 10px;       /* rounded corners */
+}
 
-    .survey-container label {
-        font-weight: bold;
-        color: #1b5e20;
-        font-size: 16px;
-    }
+.survey-container label {
+    font-weight: bold;
+    color: #1b5e20;
+    font-size: 16px;
+}
 
-    .survey-container input,
-    .survey-container select {
-        padding: 14px;
-        font-size: 17px;
-        width: 100%;
-        border: 1px solid #ccc;
-        border-radius: 10px;
-    }
+.survey-container input,
+.survey-container select {
+    padding: 14px;
+    font-size: 17px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
 
-    .btn {
-        margin-top: 25px;
-    }
+.btn {
+    margin-top: 25px;
+}
 </style>
+
 
 </head>
 <body>

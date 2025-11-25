@@ -1,15 +1,71 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>M-Pesa Shangwe</title>
-<link rel="stylesheet" href="css/style.css">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Checking Eligibility</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: #e8f5e9;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        flex-direction: column;
+        color: #1b5e20;
+        text-align: center;
+    }
+
+    .loader {
+        border: 10px solid #c8e6c9;
+        border-top: 10px solid #1b5e20;
+        border-radius: 50%;
+        width: 90px;
+        height: 90px;
+        animation: spin 1s linear infinite;
+        margin-bottom: 25px;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    #timer {
+        font-size: 30px;
+        margin-top: 10px;
+        font-weight: bold;
+    }
+</style>
 </head>
+
 <body>
-<div class="header">
-<img src="images/shangwe1.jpg" alt="Safaricom" class="logo">
-<h1>M-Pesa Shangwe Promotion</h1>
-</div>
-<a href="survey.html" class="btn">Based on your Shangwe points you are qualified ..Start Survey</a>
+
+<div class="loader"></div>
+
+<h2>Checking eligibility…</h2>
+<p>Please wait while we verify your information.</p>
+<div id="timer">5</div>
+
+<script>
+    let timeLeft = 5;
+    const timer = document.getElementById("timer");
+
+    const countdown = setInterval(() => {
+        timeLeft--;
+        timer.textContent = timeLeft;
+
+        if (timeLeft <= 0) {
+            clearInterval(countdown);
+          window.location = "home.html";
+
+        }
+    }, 1000);
+</script>
+
 </body>
 </html>

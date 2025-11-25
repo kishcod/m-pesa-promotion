@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Processing Your Funds</title>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background: #f0fdf4;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        color: #0b6e4f;
+    }
+
+    .container {
+        margin-top: 120px;
+        padding: 20px;
+    }
+
+    .title {
+        font-size: 28px;
+        font-weight: bold;
+        animation: fadeIn 1.5s ease-in-out;
+        color: #0b6e4f;
+    }
+
+    .spinner {
+        margin: 30px auto;
+        border: 6px solid #c6f6d5;
+        border-top: 6px solid #0b6e4f; 
+        border-radius: 50%;
+        width: 70px;
+        height: 70px;
+        animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+
+    .countdown {
+        margin-top: 20px;
+        font-size: 24px;
+        font-weight: bold;
+        color: #047857;
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+        0% { opacity: 1; }
+        50% { opacity: 0.5; }
+        100% { opacity: 1; }
+    }
+
+    .footer {
+        margin-top: 60px;
+        font-size: 14px;
+        color: #065f46;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="title">⏳ Please Wait…</div>
+    <div class="subtitle" style="font-size: 18px; margin-top: 10px;">
+        Your payment has been received.<br>
+        We are processing your funds.
+    </div>
+
+    <div class="spinner"></div>
+
+    <div class="countdown">
+        Funds arriving in <span id="timer">02:00</span>
+    </div>
+
+    <div class="footer">
+        Safaricom • M-Pesa Secure Processing
+    </div>
+</div>
+
+<script>
+    let time = 120; // 2 minutes
+
+    const timerDisplay = document.getElementById("timer");
+
+    const countdown = setInterval(() => {
+        let minutes = Math.floor(time / 60);
+        let seconds = time % 60;
+
+        if (seconds < 10) seconds = "0" + seconds;
+        if (minutes < 10) minutes = "0" + minutes;
+
+        timerDisplay.textContent = `${minutes}:${seconds}`;
+
+        if (time <= 0) {
+            clearInterval(countdown);
+            timerDisplay.textContent = "00:00";
+
+            // Redirect or show message after countdown
+            alert("Funds are almost ready!");
+        }
+
+        time--;
+    }, 1000);
+</script>
+
+</body>
+</html>
