@@ -1,59 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-<head><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5712039840992583"
-     crossorigin="anonymous"></script>
+<head>
 <meta charset="UTF-8">
 <title>Survey Success</title>
-<link rel="stylesheet" href="css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
     body {
-        text-align: center;
-        padding-top: 80px;
+        margin: 0;
+        padding: 0;
         background: #0b1a0f;
         color: white;
         font-family: Arial, sans-serif;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
     }
 
-    .box {
-        background: #102416;
-        width: 90%;
-        max-width: 450px;
-        margin: auto;
-        padding: 40px 20px;
-        border-radius: 15px;
-        box-shadow: 0 0 20px rgba(0,255,0,0.15);
+    /* Container */
+    .content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        animation: fadeIn 1.5s ease-in-out;
     }
 
+    /* Tick bounce animation */
     .tick {
-        font-size: 90px;
-        color: #1dbf32; /* Safaricom green */
+        font-size: 110px;
+        color: #1dbf32;
         margin-bottom: 20px;
-        filter: drop-shadow(0 0 6px rgba(0,255,0,0.4));
+        filter: drop-shadow(0 0 10px rgba(0,255,0,0.4));
+        animation: bounce 1.3s ease-out;
     }
 
+    @keyframes bounce {
+        0% { transform: scale(0); opacity: 0; }
+        60% { transform: scale(1.2); opacity: 1; }
+        100% { transform: scale(1); }
+    }
+
+    /* Text animation */
     h2 {
-        font-size: 24px;
+        font-size: 30px;
         margin-bottom: 10px;
-        color: #aaffaa;
+        color: #adffad;
+        animation: slideDown 1.2s ease-out;
+    }
+
+    @keyframes slideDown {
+        0% { transform: translateY(-30px); opacity: 0; }
+        100% { transform: translateY(0); opacity: 1; }
     }
 
     p {
-        font-size: 16px;
-        opacity: 0.8;
-        margin-bottom: 30px;
+        font-size: 18px;
+        opacity: 0.85;
+        margin-bottom: 25px;
+        animation: fadeIn 2s ease-out;
     }
 
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    /* Button */
     #goSpin {
-        display: inline-block;
         background: #1dbf32;
-        padding: 14px 32px;
-        border-radius: 10px;
+        padding: 14px 34px;
+        border-radius: 12px;
         color: white;
-        font-size: 18px;
+        font-size: 20px;
         font-weight: bold;
         text-decoration: none;
         box-shadow: 0 4px 12px rgba(0,255,0,0.25);
         transition: 0.2s;
+        animation: fadeIn 2.5s ease-out;
     }
 
     #goSpin:hover {
@@ -61,11 +88,18 @@
         transform: translateY(-2px);
         box-shadow: 0 6px 16px rgba(0,255,0,0.4);
     }
+
+    /* Bottom image */
+    .bottom-image {
+        width: 100%;
+        height: auto;
+    }
 </style>
 </head>
+
 <body>
 
-<div class="box">
+<div class="content">
     <div class="tick">✓</div>
 
     <h2>Congratulations!</h2>
@@ -73,6 +107,10 @@
 
     <a href="spin.html" id="goSpin">Proceed to Spin</a>
 </div>
+
+<!-- Your image placed at bottom -->
+<img src="images/safaricom2.jpg" class="bottom-image">
+
 
 </body>
 </html>

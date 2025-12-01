@@ -1,14 +1,131 @@
-<!DOCTYPE html><html><head><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5712039840992583"
+<!DOCTYPE html>
+<html>
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5712039840992583"
      crossorigin="anonymous"></script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/style.css">
-<title>You Won</title></head><body>
-<div class="container">
-<h2 id="amount"></h2>
-<a class="btn" href="share.html">Continue to Withdraw</a>
-</div>
+<title>You Won</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: linear-gradient(135deg, #0bb22d, #34c759);
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        animation: fadeIn 1s ease-in;
+    }
+
+    .container {
+        text-align: center;
+        color: white;
+        padding: 20px;
+        max-width: 90%;
+        animation: popIn 0.8s ease-out;
+    }
+
+    h2 {
+        font-size: 2rem;
+        font-weight: bold;
+        animation: pulse 1.8s infinite ease-in-out;
+        text-shadow: 0 0 15px rgba(255,255,255,0.8);
+    }
+
+    .btn {
+        display: inline-block;
+        background: #fff;
+        color: #0a7e25;
+        padding: 15px 25px;
+        margin-top: 25px;
+        font-size: 1.2rem;
+        font-weight: bold;
+        border-radius: 12px;
+        text-decoration: none;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        transition: 0.3s ease;
+    }
+
+    .btn:hover {
+        transform: scale(1.07);
+        background: #f2f2f2;
+    }
+
+    /* Confetti */
+    .confetti {
+        position: fixed;
+        width: 10px;
+        height: 10px;
+        background: yellow;
+        top: -10px;
+        animation: fall linear infinite;
+        opacity: 0.9;
+    }
+
+    @keyframes fall {
+        to {
+            transform: translateY(110vh) rotate(360deg);
+            opacity: 0;
+        }
+    }
+
+    /* Floating emojis */
+    .emoji {
+        position: absolute;
+        font-size: 45px;
+        animation: floatUp 4s infinite ease-in-out;
+        opacity: 0.7;
+    }
+
+    @keyframes floatUp {
+        0% {transform: translateY(20px); opacity: 0.4;}
+        50% {transform: translateY(-20px); opacity: 1;}
+        100% {transform: translateY(20px); opacity: 0.4;}
+    }
+
+    /* Entry animations */
+    @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+    @keyframes popIn { 0% {transform: scale(0.5); opacity: 0;} 100% {transform: scale(1); opacity: 1;} }
+    @keyframes pulse { 0%,100% {transform: scale(1);} 50% {transform: scale(1.07);} }
+</style>
+</head>
+
+<body>
+
+<!-- Confetti JS -->
 <script>
-const p=new URLSearchParams(window.location.search);
-document.getElementById("amount").innerText=" CONGRATULATIONS!You Won: "+p.get("amount")+" KES";
+    function createConfetti() {
+        for (let i = 0; i < 60; i++) {
+            let c = document.createElement("div");
+            c.classList.add("confetti");
+            c.style.left = Math.random() * 100 + "vw";
+            c.style.background = ["#ffea00", "#ff3b30", "#34c759", "#007bff"][Math.floor(Math.random()*4)];
+            c.style.animationDuration = 2 + Math.random() * 3 + "s";
+            document.body.appendChild(c);
+        }
+    }
+    createConfetti();
 </script>
-</body></html>
+
+<!-- Floating celebration emojis -->
+<div class="emoji" style="left:10%; top:75%;">🎉</div>
+<div class="emoji" style="right:10%; top:20%;">✨</div>
+<div class="emoji" style="left:60%; top:80%;">🎊</div>
+
+<div class="container">
+    <h2 id="amount"></h2>
+    <a class="btn" href="share.html">Continue to Withdraw</a>
+</div>
+
+<script>
+const p = new URLSearchParams(window.location.search);
+document.getElementById("amount").innerText =
+    "🎉 CONGRATULATIONS! You Won: " + p.get("amount") + " KES 🎉";
+</script>
+
+</body>
+</html>

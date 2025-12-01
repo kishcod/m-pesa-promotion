@@ -1,22 +1,122 @@
-<!DOCTYPE html><html><head><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5712039840992583"
+<!DOCTYPE html>
+<html>
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5712039840992583"
      crossorigin="anonymous"></script>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="css/style.css">
-<title>Share</title></head><body>
-<div class="container">
-<h2> To continue, Share this good news to 5 WhatsApp Numbers</h2>
-<a id="shareBtn" class="btn" href="https://wa.me/?text=Mpesa shangwe promotion is giving prices,check eligibility here.. Join%20Shangwe:%20https://shangwe.xyz" target="_blank">Share Now</a>
-<a id="continueBtn" class="btn disabled" href="pay.html" onclick="return false;">Continue</a>
 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Share</title>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        background: #f1f1f1;
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        text-align: center;
+        padding: 20px;
+    }
+
+    h2 {
+        color: #0a7e25;
+        font-weight: bold;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        display: inline-block;
+        background: #0bb22d;
+        color: #fff;
+        padding: 15px 20px;
+        margin: 10px 0;
+        text-decoration: none;
+        border-radius: 10px;
+        font-weight: bold;
+        width: 80%;
+        max-width: 300px;
+        transition: 0.3s;
+    }
+
+    .btn:hover {
+        background: #0a941f;
+    }
+
+    .disabled {
+        background: gray !important;
+        pointer-events: none;
+    }
+
+    /* Scrolling winners bar */
+    .ticker-container {
+        margin-top: 25px;
+        width: 100%;
+        overflow: hidden;
+        background: #fff;
+        padding: 10px 0;
+        border-top: 2px solid #0bb22d;
+        border-bottom: 2px solid #0bb22d;
+    }
+
+    .ticker {
+        display: flex;
+        width: max-content;
+        animation: scroll 18s linear infinite;
+        font-size: 1.1rem;
+        color: #0a7e25;
+        font-weight: bold;
+    }
+
+    .ticker span {
+        padding: 0 40px;
+        white-space: nowrap;
+    }
+
+    @keyframes scroll {
+        0% { transform: translateX(100%); }
+        100% { transform: translateX(-100%); }
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>To continue, Share this good news to 5 WhatsApp Numbers</h2>
+
+    <a id="shareBtn" class="btn"
+       href="https://wa.me/?text=Mpesa shangwe promotion is giving prices,check eligibility here.. Join%20Shangwe:%20https://shangwe.xyz"
+       target="_blank">Share Now</a>
+
+    <a id="continueBtn" class="btn disabled"
+       href="pay.html" onclick="return false;">Continue</a>
 </div>
-</body></html>
+
+<!-- Winner Scrolling Ticker -->
+<div class="ticker-container">
+    <div class="ticker">
+        <span>🎉 Joyce Wambui (0725 XXX 025) won 13,000 KES</span>
+        <span>🎉 Michael Mutinda (0712 XXX XXX) won 30,000 KES</span>
+        <span>🎉 Moses Shianda (0713 XXX 265) won 11,000 KES</span>
+        <span>🎉 Simion Wakiere (0711 XXX 254) won 45,000 KES</span>
+        <span>🎉 Joyce Wambui (0725 XXX 025) won 13,000 KES</span>
+        <span>🎉 Michael Mutinda (0712 XXX XXX) won 30,000 KES</span>
+    </div>
+</div>
+
 <script>
 const shareBtn = document.getElementById("shareBtn");
 const continueBtn = document.getElementById("continueBtn");
 
 shareBtn.addEventListener("click", () => {
-    // Enable Continue button
     continueBtn.classList.remove("disabled");
-    continueBtn.setAttribute("onclick", null); // allow navigation
+    continueBtn.setAttribute("onclick", null);
 });
 </script>
+
+</body>
+</html>
+
