@@ -1,18 +1,89 @@
 <!DOCTYPE html>
 <html>
-<head><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5712039840992583"
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5712039840992583"
      crossorigin="anonymous"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>M-Pesa Shangwe</title>
 <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-<div class="header">
-<img src="images/shangwe1.jpg" alt="Safaricom" class="logo">
-<h2> CONGRATULATIONS!</h2>
-<h1>M-Pesa Shangwe Promotion</h1>
 
+<style>
+    body {
+        background: #0b1a0f;
+        color: white;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        overflow-x: hidden;
+    }
+
+    .header {
+        margin-top: 40px;
+    }
+
+    .logo {
+        width: 120px;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+
+    .btn {
+        display: inline-block;
+        margin-top: 25px;
+        padding: 14px 32px;
+        background: #1dbf32;
+        color: white;
+        font-size: 20px;
+        border-radius: 10px;
+        text-decoration: none;
+        box-shadow: 0 4px 12px rgba(0,255,0,0.3);
+    }
+
+    /* MONEY FALLING ANIMATION */
+    .money {
+        position: fixed;
+        bottom: -50px;
+        left: 0;
+        width: 100%;
+        pointer-events: none;
+        overflow: hidden;
+        z-index: -1;
+    }
+
+    .note {
+        position: absolute;
+        width: 40px;
+        height: 20px;
+        background: #1dbf32;
+        border-radius: 4px;
+        opacity: 0.8;
+        animation: fall 4s linear infinite;
+    }
+
+    @keyframes fall {
+        0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+        100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <img src="images/shangwe1.jpg" alt="Safaricom" class="logo">
+    <h2>CONGRATULATIONS!</h2>
+    <h1>M-Pesa Shangwe Promotion</h1>
 </div>
-<a href="survey.html" class="btn">Based on your Shangwe points you are qualified ..Start Survey</a>
+
+<a href="survey.html" class="btn">Based on your Shangwe points you are qualified .. Start Survey</a>
+
+<!-- Falling Money Container -->
+<div class="money">
+    <div class="note" style="left: 5%; animation-delay: 0s;"></div>
+    <div class="note" style="left: 20%; animation-delay: 0.5s;"></div>
+    <div class="note" style="left: 40%; animation-delay: 1s;"></div>
+    <div class="note" style="left: 60%; animation-delay: 1.5s;"></div>
+    <div class="note" style="left: 80%; animation-delay: 2s;"></div>
+</div>
+
 </body>
 </html>

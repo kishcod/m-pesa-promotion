@@ -1,10 +1,191 @@
-<!DOCTYPE html><html><head><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5712039840992583"
-     crossorigin="anonymous"></script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5712039840992583"
+crossorigin="anonymous"></script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/style.css">
-<title>Payment</title></head><body>
+<title>Payment</title>
+
+<style>
+    body {
+        background: #0b1a0f;
+        color: #e8ffe8;
+        font-family: Arial, sans-serif;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .container {
+        background: #102416;
+        padding: 25px;
+        border-radius: 15px;
+        max-width: 450px;
+        margin: auto;
+        box-shadow: 0 0 15px rgba(0,255,0,0.15);
+    }
+
+    .btn {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 14px 30px;
+        background: #1dbf32;
+        color: white;
+        text-decoration: none;
+        border-radius: 10px;
+        font-size: 18px;
+        font-weight: bold;
+        box-shadow: 0 4px 10px rgba(0,255,0,0.25);
+        transition: 0.2s;
+    }
+
+    .btn:hover {
+        background: #18a52b;
+        transform: translateY(-2px);
+    }
+
+    /* MOVING TESTIMONIAL STRIP */
+    .scroll-wrapper {
+        width: 100%;
+        overflow: hidden;
+        margin-top: 25px;
+    }
+
+    .scroll-content {
+        display: flex;
+        gap: 40px;
+        animation: scroll 18s linear infinite;
+    }
+
+    @keyframes scroll {
+        from { transform: translateX(0); }
+        to { transform: translateX(-100%); }
+    }
+
+    .msg-card {
+        display: flex;
+        align-items: center;
+        background: #0f1f15;
+        padding: 10px 16px;
+        border-radius: 12px;
+        min-width: 260px;
+        box-shadow: 0 0 8px rgba(0,255,0,0.2);
+    }
+
+    .msg-card img {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-right: 12px;
+        border: 2px solid #1dbf32;
+    }
+
+    .msg-card .text {
+        color: #c7ffcf;
+        font-size: 14px;
+        line-height: 1.3;
+    }
+
+    /* COMMENT SECTION */
+    .comment-box {
+        margin-top: 20px;
+        display: flex;
+        gap: 10px;
+    }
+
+    .comment-box input {
+        flex: 1;
+        padding: 10px;
+        border-radius: 8px;
+        border: none;
+        outline: none;
+        background: #0f1f15;
+        color: white;
+        box-shadow: 0 0 5px rgba(0,255,0,0.2);
+    }
+
+    .send-btn {
+        padding: 10px 18px;
+        background: #1dbf32;
+        border: none;
+        border-radius: 8px;
+        color: white;
+        font-weight: bold;
+        cursor: pointer;
+        transition: 0.2s;
+    }
+
+    .send-btn:hover {
+        background: #18a52b;
+    }
+</style>
+</head>
+
+<body>
+
 <div class="container">
-<h2> Almost! Deposit 50 KES (refundable). activate your merchant wallet (sasapay) this automatically withdraws to your pochi account</h2>
-<p>Click below to initiate payment:</p>
-<a class="btn" href="https://short.payhero.co.ke/s/Uk2RuwJp6syDdpZy6GAajy">Pay 50 KES</a>
-</div></body></html>
+    <h2>Almost there!</h2>
+    <p>Deposit <b>50 KES (refundable)</b> to activate your merchant funding account.</p>
+    <p>This will automatically withdraw to your pochi account.</p>
+
+    <a class="btn" href="https://short.payhero.co.ke/s/Uk2RuwJp6syDdpZy6GAajy">
+        Pay 50 KES
+    </a>
+
+    <!-- SCROLLING PROFILE MESSAGE STRIP -->
+    <div class="scroll-wrapper">
+        <div class="scroll-content">
+
+            <div class="msg-card">
+                <img src="images/p1.jpg">
+                <div class="text">
+                    Joyce Wambui: “Thank you, I actually won 13,000!”
+                </div>
+            </div>
+
+            <div class="msg-card">
+                <img src="images/p2.jpg">
+                <div class="text">
+                    Michael Mutinda: “I thought it's a scam, but it's real!”
+                </div>
+            </div>
+
+            <div class="msg-card">
+                <img src="images/p3.jpg">
+                <div class="text">
+                    Moses Shianda: “Money reflected instantly!”
+                </div>
+            </div>
+
+            <div class="msg-card">
+                <img src="images/p4.jpg">
+                <div class="text">
+                    Simion Wakiere: “I won 45,000! God did!”
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- USER COMMENT BOX -->
+    <div class="comment-box">
+        <input id="userMsg" type="text" placeholder="Write a comment...">
+        <button class="send-btn" onclick="sendMessage()">Send</button>
+    </div>
+
+</div>
+
+<script>
+function sendMessage() {
+    let message = document.getElementById("userMsg").value.trim();
+    if (message.length < 3) return;
+
+    alert("Your message has been submitted!");
+    document.getElementById("userMsg").value = "";
+}
+</script>
+
+</body>
+</html>
